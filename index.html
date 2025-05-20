@@ -3,133 +3,383 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Baptiste Dupont | Développeur Full Stack</title>
+    <title>Baptiste Didier | Développeur Web</title>
+    <meta name="description" content="Portfolio de Baptiste Didier, étudiant en BUT Informatique et développeur web passionné.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
 <body>
-    <header class="header-main">
+    <header>
         <div class="container">
-            <div class="header-content">
+            <div class="logo">
                 <h1>Baptiste Didier</h1>
-                <p class="tagline">Développeur Full Stack</p>
-                <nav>
-                    <ul>
-                        <li><a href="#competences">Compétences</a></li>
-                        <li><a href="#projets">Projets</a></li>
-                        <li><a href="#parcours">Parcours</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </nav>
             </div>
+            <nav>
+                <ul>
+                    <li><a href="#about">À propos</a></li>
+                    <li><a href="#timeline">Parcours</a></li>
+                    <li><a href="#projects">Projets</a></li>
+                    <li><a href="#skills">Compétences</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
-    <main>
-        <section id="hero" class="section-hero">
-            <div class="container">
-                <div class="hero-content">
-                    <h2>Développeur Full Stack</h2>
-                    <p>Étudiant en BUT Informatique, je développe des solutions web innovantes en associant créativité et rigueur technique.</p>
-                    <div class="cta-buttons">
-                        <a href="#projets" class="btn btn-primary">Voir mes projets</a>
-                        <a href="#contact" class="btn btn-secondary">Me contacter</a>
+    <section class="hero">
+        <div class="tech-pattern"></div>
+        <div class="tech-icon tech-icon-1"><i class="fas fa-code"></i></div>
+        <div class="tech-icon tech-icon-2"><i class="fas fa-database"></i></div>
+        <div class="tech-icon tech-icon-3"><i class="fas fa-laptop-code"></i></div>
+        <div class="tech-icon tech-icon-4"><i class="fas fa-terminal"></i></div>
+        <div class="container">
+            <h2>Développeur Full Stack</h2>
+            <p>Étudiant en BUT Informatique à l'IUT Nord-Franche Comte</p>
+            <div class="hero-buttons">
+                <a href="#skills" class="btn primary-btn">Mes compétences</a>
+                <a href="#contact" class="btn secondary-btn">Me contacter</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="tech-pattern"></div>
+        <div class="code-element code-element-1"><i class="fas fa-brackets-curly"></i></div>
+        <div class="container">
+            <h2>À propos de moi</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Étudiant en BUT Informatique à l'IUT Nord-Franche-Comté, je suis passionné par le développement web, la programmation et l'univers des nouvelles technologies. Curieux et motivé, je cherche à mettre mes compétences en pratique à travers des projets concrets et enrichissants.</p>
+                    <p>Grâce à mon parcours académique et à mes réalisations personnelles, j'ai acquis des compétences solides en développement front-end et back-end. Je maîtrise les technologies modernes du web et je suis constamment à la recherche de nouvelles connaissances pour progresser dans ce domaine en constante évolution.</p>
+                </div>
+
+                <div class="about-image">
+                    <img src="images/IMG_profil.png" alt="Baptiste Didier">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="timeline">
+        <div class="container">
+            <h2>Mon Parcours</h2>
+            <div class="timeline">
+                <!-- Timeline Item 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="timeline-date">2025 - Aujourd'hui</div>
+                    <div class="timeline-content">
+                        <h3>BUT Informatique</h3>
+                        <p>IUT Nord-Franche-Comte</p>
+                    </div>
+                </div>
+                
+                <!-- Timeline Item 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <div class="timeline-date">2021-2024</div>
+                    <div class="timeline-content">
+                        <h3>Baccalauréat STI2D</h3>
+                        <p>Lycée Raoul Follereau, Belfort - Spécialité Systèmes d'Information et Numérique</p>
+                    </div>
+                </div>
+                
+                <!-- Timeline Item 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <div class="timeline-date">2017-2021</div>
+                    <div class="timeline-content">
+                        <h3>Brevet des collèges</h3>
+                        <p>Collège Vauban, Belfort</p>
+                    </div>
+                </div>
+                
+                <!-- Timeline Item 4 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="timeline-date">2019</div>
+                    <div class="timeline-content">
+                        <h3>Initiation à la programmation</h3>
+                        <p>Formation autodidacte en HTML, CSS et JavaScript</p>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="competences" class="section-competences">
+    <section id="projets" class="projects">
             <div class="container">
-                <h2>Compétences Techniques</h2>
-                <div class="competences-grid">
-                    <div class="competence-category">
-                        <h3>Front-end</h3>
-                        <ul>
-                            <li><i class="devicon-html5-plain colored"></i> HTML5 - Avancé</li>
-                            <li><i class="devicon-css3-plain colored"></i> CSS3 - Avancé</li>
-                            <li><i class="devicon-javascript-plain colored"></i> JavaScript - Intermédiaire</li>
-                        </ul>
-                    </div>
-                    <div class="competence-category">
-                        <h3>Back-end</h3>
-                        <ul>
-                            <li><i class="devicon-python-plain colored"></i> Python - Avancé</li>
-                            <li><i class="devicon-java-plain colored"></i> Java - Intermédiaire</li>
-                            <li><i class="devicon-mysql-plain colored"></i> SQL - Intermédiaire</li>
-                        </ul>
-                    </div>
-                    <div class="competence-category">
-                        <h3>Outils & Méthodes</h3>
-                        <ul>
-                            <li><i class="devicon-git-plain colored"></i> Git - Intermédiaire</li>
-                        </ul>
-                    </div>
+                <div class="terminal-header">
+                    <span>baptiste@portfolio:~/projets$</span>
+                    <span class="terminal-title">ls -la</span>
                 </div>
-            </div>
-        </section>
-
-        <section id="projets" class="section-projets">
-            <div class="container">
-                <h2>Projets Réalisés</h2>
-                <div class="projets-grid">
-                    <article class="projet-card">
-                        <div class="projet-image">
-                            <img src="img/projet1.jpg" alt="Projet 1">
+                <h2 class="section-title">Mes projets</h2>
+                <div class="project-filters">
+                    <button class="filter-btn active" data-filter="all">tous</button>
+                    <button class="filter-btn" data-filter="web">web</button>
+                    <button class="filter-btn" data-filter="java">java</button>
+                    <button class="filter-btn" data-filter="python">python</button>
+                    <button class="filter-btn" data-filter="mobile">mobile</button>
+                    <button class="filter-btn" data-filter="autre">autre</button>
+                </div>
+                <div class="project-grid">
+                    <!-- Projet 1 -->
+                    <div class="project-card" data-category="web">
+                        <div class="project-image">
+                            <img src="images/image.png" alt="Projet 1">
                         </div>
-                        <div class="projet-content">
-                            <h3>Projet1</h3>
-                            <p class="projet-tags">
+                        <div class="project-info">
+                            <h3>Site E-commerce</h3>
+                            <p>Développement d'une boutique en ligne destiné à la vente de câble.</p>
+                            <div class="project-tags">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                                <span>Flask</span>
                                 <span>Python</span>
-
-                            </p>
-                            <p>Description Projet 1. SAE</p>
-                            <div class="projet-links">
-                                <a href="#" class="btn btn-small">Voir le projet</a>
-                                <a href="#" class="btn btn-small btn-github"><i class="fab fa-github"></i> Code source</a>
+                                <span>SQL</span>
                             </div>
+                            <a href="https://github.com/bdidier1/SAE2.04" class="project-link">voir le projet <i class="fas fa-arrow-right"></i></a>
                         </div>
-                    </article>
+                    </div>
+                    <!-- Projet 2 -->
+                    <div class="project-card" data-category="java">
+                        <div class="project-image">
+                            <img src="images/pauvocoder.png" alt="Projet 2">
+                        </div>
+                        <div class="project-info">
+                            <h3>Pauvocoder</h3>
+                            <p>Code permettant de manipuler des fichiers audio en appliquant diverses transformations.</p>
+                            <div class="project-tags">
+                                <span>Java</span>
+                            </div>
+                            <a href="https://github.com/bdidier1/SAE1.01-02" class="project-link">voir le projet <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <!-- Projet 3 -->
+                    <div class="project-card" data-category="python">
+                        <div class="project-image">
+                            <img src="images/discord-bot.png" alt="Projet 3">
+                        </div>
+                        <div class="project-info">
+                            <h3>Bot Discord</h3>
+                            <p>Bot permettant d'afficher les temps d'attente dans différents parcs d'attractions depuis Discord. </p>
+                            <div class="project-tags">
+                                <span>Python</span>
+                            </div>
+                            <a href="https://github.com/bdidier1/discord_bot_times" class="project-link">voir le projet <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <!-- Projet 4 (caché par défaut) -->
+                    <div class="project-card hidden-project" data-category="web" style="display: none;">
+                        <div class="project-image">
+                            <img src="images/portfolio.png" alt="Portfolio">
+                        </div>
+                        <div class="project-info">
+                            <h3>Portfolio Personnel</h3>
+                            <p>Conception et développement de mon portfolio personnel pour présenter mes projets et compétences.</p>
+                            <div class="project-tags">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                            </div>
+                            <a href="https://github.com/bdidier1/portfolio" class="project-link">voir le projet <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <!-- Projet 5 (caché par défaut) -->
+                    <div class="project-card hidden-project" data-category="python" style="display: none;">
+                        <div class="project-image">
+                            <img src="images/data-analysis.png" alt="Analyse de données">
+                        </div>
+                        <div class="project-info">
+                            <h3>Analyse de données</h3>
+                            <p>Projet d'analyse de données météorologiques avec visualisation des tendances et prédictions.</p>
+                            <div class="project-tags">
+                                <span>Python</span>
+                                <span>Pandas</span>
+                                <span>Matplotlib</span>
+                            </div>
+                            <a href="#" class="project-link">voir le projet <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <!-- Projet 6 (caché par défaut) -->
+                    <div class="project-card hidden-project" data-category="mobile" style="display: none;">
+                        <div class="project-image">
+                            <img src="images/mobile-app.png" alt="Application mobile">
+                        </div>
+                        <div class="project-info">
+                            <h3>Application Mobile</h3>
+                            <p>Application mobile de gestion de tâches avec notifications et synchronisation cloud.</p>
+                            <div class="project-tags">
+                                <span>React Native</span>
+                                <span>JavaScript</span>
+                                <span>Firebase</span>
+                            </div>
+                            <a href="#" class="project-link">voir le projet <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="show-more-container">
+                    <button id="show-more-btn" class="btn primary-btn show-more-btn">Afficher plus de projets <i class="fas fa-chevron-down"></i></button>
                 </div>
             </div>
         </section>
 
-        <section id="parcours" class="section-parcours">
-            <div class="container">
-                <h2>Parcours Académique</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <h3>BUT Informatique</h3>
-                            <p class="timeline-date">2025 - Présent</p>
-                            <p>IUT </p>
-                            <ul class="timeline-details">
-                                <li>lycee</li>
-                                <li>stage</li>
-                                <li>college</li>
-                                <li>école</li>
-
-                            </ul>
-                        </div>
-                    </div>
+    <section id="skills">
+        <div class="tech-pattern"></div>
+        <div class="tech-icon tech-icon-2"><i class="fas fa-laptop"></i></div>
+        <div class="tech-icon tech-icon-4"><i class="fas fa-sitemap"></i></div>
+        <div class="container">
+            <h2>Compétences</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Frontend</h3>
+                    <ul class="skills-list">
+                        <li class="skill-item">
+                            <div class="skill-icon"><i class="fab fa-html5"></i></div>
+                            <div>
+                                <div class="skill-name">HTML</div>
+                                <div class="skill-bar"><div class="skill-progress" style="width: 90%;"></div></div>
+                            </div>
+                        </li>
+                        <li class="skill-item">
+                            <div class="skill-icon"><i class="fab fa-css3-alt"></i></div>
+                            <div>
+                                <div class="skill-name">CSS</div>
+                                <div class="skill-bar"><div class="skill-progress" style="width: 85%;"></div></div>
+                            </div>
+                        </li>
+                        <li class="skill-item">
+                            <div class="skill-icon"><i class="fab fa-js"></i></div>
+                            <div>
+                                <div class="skill-name">JavaScript</div>
+                                <div class="skill-bar"><div class="skill-progress" style="width: 80%;"></div></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Backend</h3>
+                    <ul class="skills-list">
+                        <li class="skill-item">
+                            <div class="skill-icon"><i class="fab fa-python"></i></div>
+                            <div>
+                                <div class="skill-name">Python</div>
+                                <div class="skill-bar"><div class="skill-progress" style="width: 75%;"></div></div>
+                            </div>
+                        </li>
+                        <li class="skill-item">
+                            <div class="skill-icon"><i class="fab fa-flask"></i></div>
+                            <div>
+                                <div class="skill-name">Flask</div>
+                                <div class="skill-bar"><div class="skill-progress" style="width: 70%;"></div></div>
+                            </div>
+                        </li>
+                        <li class="skill-item">
+                            <div class="skill-icon"><i class="fas fa-database"></i></div>
+                            <div>
+                                <div class="skill-name">SQL</div>
+                                <div class="skill-bar"><div class="skill-progress" style="width: 75%;"></div></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Autres</h3>
+                    <ul class="skills-list">
+                        <li class="skill-item">
+                            <div class="skill-icon"><i class="fab fa-git-alt"></i></div>
+                            <div>
+                                <div class="skill-name">Git</div>
+                                <div class="skill-bar"><div class="skill-progress" style="width: 85%;"></div></div>
+                            </div>
+                        </li>
+                        <li class="skill-item">
+                            <div class="skill-icon"><i class="fas fa-mobile-alt"></i></div>
+                            <div>
+                                <div class="skill-name">Shell</div>
+                                <div class="skill-bar"><div class="skill-progress" style="width: 80%;"></div></div>
+                            </div>
+                        </li>
+                        <li class="skill-item">
+                            <div class="skill-icon"><i class="fab fa-java"></i></div>
+                            <div>
+                                <div class="skill-name">Java</div>
+                                <div class="skill-bar"><div class="skill-progress" style="width: 85%;"></div></div>
+                            </div>
+                        </li>
+                        <li class="skill-item">
+                            <div class="skill-icon"><i class="fab fa-php"></i></div>
+                            <div>
+                                <div class="skill-name">PHP</div>
+                                <div class="skill-bar"><div class="skill-progress" style="width: 70%;"></div></div>
+                            </div>
+                        </li>
+                        <li class="skill-item">
+                            <div class="skill-icon"><i class="fab fa-node-js"></i></div>
+                            <div>
+                                <div class="skill-name">Node.js</div>
+                                <div class="skill-bar"><div class="skill-progress" style="width: 65%;"></div></div>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="contact" class="section-contact">
-            <div class="container">
-                <h2>Me Contacter</h2>
-                <div class="contact-content">
-                    <div class="contact-info">
-                        <h3>Informations</h3>
-                        <ul>
-                            <li><i class="fas fa-envelope"></i> baptiste.didier@proton.me</li>
-                            <li><i class="fab fa-linkedin"></i> linkedin.com</li>
-                            <li><i class="fab fa-github"></i> github.com/bdidier1</li>
-                        </ul>
+    <section id="contact">
+        <div class="tech-pattern"></div>
+        <div class="code-element code-element-1"><i class="fas fa-less-than-slash"></i></div>
+        <div class="container">
+            <h2>Contact</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Parlons de votre projet</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">baptiste.didier@proton.me</div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-text">06 02 56 43 63</div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">Belfort, France</div>
+                        </div>
                     </div>
-                    <form id="contact-form" class="contact-form">
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-stack-overflow"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contact-form">
                         <div class="form-group">
                             <label for="name">Nom</label>
                             <input type="text" id="name" name="name" required>
@@ -142,23 +392,19 @@
                             <label for="message">Message</label>
                             <textarea id="message" name="message" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">Envoyer</button>
+                        <button type="submit">Envoyer le message</button>
                     </form>
+                    <div id="form-message"></div>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
-    <footer class="footer-main">
+    <footer>
         <div class="container">
-            <p>&copy; 2025 Baptiste Didier - Portfolio</p>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-            </div>
+            <p>&copy; 2025 Baptiste Didier. Tous droits réservés.</p>
         </div>
     </footer>
     <script src="js/script.js"></script>
 </body>
-</html>
+</html> 
