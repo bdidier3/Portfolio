@@ -196,6 +196,7 @@ nav li a.active:after {
 /* Sections */
 section {
     padding: 80px 0;
+    position: relative;
 }
 
 section h2 {
@@ -204,6 +205,7 @@ section h2 {
     margin-bottom: 50px;
     position: relative;
     color: var(--heading-color);
+    margin-top: 30px;
 }
 
 section h2:after {
@@ -215,6 +217,14 @@ section h2:after {
     bottom: -10px;
     left: 50%;
     transform: translateX(-50%);
+}
+
+section > .container {
+    background: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
 }
 
 /* About */
@@ -454,6 +464,7 @@ section h2:after {
 .social-links {
     display: flex;
     gap: 15px;
+    margin-top: 30px;
 }
 
 .social-link {
@@ -992,7 +1003,7 @@ footer a {
     color: white;
     padding: 15px 20px;
     border-radius: 8px 8px 0 0;
-    margin-bottom: 40px;
+    margin-bottom: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -1125,7 +1136,7 @@ footer a {
 }
 
 .project-link:hover {
-    color: var(--accent-color);
+    color: var (--accent-color);
 }
 
 .project-link i {
@@ -1166,4 +1177,63 @@ footer a {
 .hidden-project {
     opacity: 0;
     transform: translateY(20px);
-} 
+}
+
+/* Terminal Styling */
+.terminal-header {
+    background: #2d2d2d;
+    color: #fff;
+    padding: 15px 20px;
+    border-radius: 10px 10px 0 0;
+    font-family: 'Monaco', 'Consolas', monospace;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 0;
+}
+
+.terminal-header::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 5px;
+}
+
+.terminal-header::after {
+    content: '• • •';
+    position: absolute;
+    left: 15px;
+    color: #fff;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.terminal-header span {
+    margin-left: 50px;
+}
+
+.terminal-title {
+    color: #4caf50;
+}
+
+.terminal-container {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 0 0 10px 10px;
+    margin-bottom: 40px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid #eaeaea;
+    border-top: none;
+    margin-top: 0;
+}
+
+section > .container {
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+}
