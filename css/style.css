@@ -112,13 +112,12 @@ nav li a {
 }
 
 nav li a:hover {
-    color: var(--primary-color);
-    background: rgba(33, 150, 243, 0.1);
+    color: rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.1);
 }
 
 nav li a.active {
-    color: var(--primary-color);
-    background: rgba(33, 150, 243, 0.1);
+    background: rgba(0, 0, 0, 0.1);
 }
 
 nav li a::after {
