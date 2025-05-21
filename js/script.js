@@ -1,4 +1,83 @@
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM fully loaded and parsed');
+    
+    // Direct button handlers for the hero section buttons
+    const skillsButton = document.querySelector('.hero-buttons .primary-btn');
+    const contactButton = document.querySelector('.hero-buttons .secondary-btn');
+    
+    if (skillsButton) {
+        console.log('Skills button found:', skillsButton);
+        skillsButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            scrollToSection(targetId);
+        });
+    } else {
+        console.log('Skills button not found');
+    }
+    
+    if (contactButton) {
+        console.log('Contact button found:', contactButton);
+        contactButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            scrollToSection(targetId);
+        });
+    } else {
+        console.log('Contact button not found');
+    }
+    
+    // Function to handle scrolling to sections
+    function scrollToSection(targetId) {
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+            console.log('Scrolling to:', targetId);
+            const offsetTop = targetElement.offsetTop;
+            
+            // Check if we're in mobile view (no sidebar)
+            const isMobile = window.matchMedia('(max-width: 768px)').matches;
+            const headerHeight = isMobile ? document.querySelector('header').offsetHeight : 0;
+            
+            window.scrollTo({
+                top: offsetTop - headerHeight,
+                behavior: 'smooth'
+            });
+            
+            // Update active nav item
+            const navLinks = document.querySelectorAll('nav a');
+            navLinks.forEach(item => item.classList.remove('active'));
+            
+            const correspondingNavLink = document.querySelector(`nav a[href="${targetId}"]`);
+            if (correspondingNavLink) {
+                correspondingNavLink.classList.add('active');
+            }
+        } else {
+            console.log('Target section not found:', targetId);
+        }
+    }
+    
+    // Sidebar toggle functionality
+    const sidebarToggle = document.getElementById('sidebar-toggle');
+    const body = document.body;
+    
+    // Check if the sidebar was closed in a previous session
+    const sidebarState = localStorage.getItem('sidebarState');
+    if (sidebarState === 'closed') {
+        body.classList.add('sidebar-closed');
+    }
+    
+    sidebarToggle.addEventListener('click', function() {
+        body.classList.toggle('sidebar-closed');
+        
+        // Save the state to localStorage
+        if (body.classList.contains('sidebar-closed')) {
+            localStorage.setItem('sidebarState', 'closed');
+        } else {
+            localStorage.setItem('sidebarState', 'open');
+        }
+    });
+    
     // Gestion du formulaire de contact
     const form = document.getElementById('contact-form');
     const formMessage = document.getElementById('form-message');
@@ -42,50 +121,18 @@ document.addEventListener('DOMContentLoaded', function() {
             if (href.startsWith('#')) {
                 e.preventDefault();
                 const targetId = href;
-                const targetElement = document.querySelector(targetId);
-                
-                if (targetElement) {
-                    const offsetTop = targetElement.offsetTop;
-                    const headerHeight = document.querySelector('header').offsetHeight;
-                    
-                    window.scrollTo({
-                        top: offsetTop - headerHeight,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Update active state
-                    navLinks.forEach(item => item.classList.remove('active'));
-                    this.classList.add('active');
-                }
-            }
-        });
-    });
-    
-    // Fix hero buttons scrolling
-    const heroButtons = document.querySelectorAll('.hero-buttons .btn');
-    heroButtons.forEach(button => {
-        button.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-            
-            if (targetElement) {
-                const offsetTop = targetElement.offsetTop;
-                const headerHeight = document.querySelector('header').offsetHeight;
-                
-                window.scrollTo({
-                    top: offsetTop - headerHeight,
-                    behavior: 'smooth'
-                });
+                scrollToSection(targetId);
             }
         });
     });
     
     // Détecter la section active lors du défilement
     const sections = document.querySelectorAll('section[id]');
-    const headerHeight = document.querySelector('header').offsetHeight;
     
     function setActiveNavItem() {
+        const isMobile = window.matchMedia('(max-width: 768px)').matches;
+        const headerHeight = isMobile ? document.querySelector('header').offsetHeight : 0;
+        
         let current = '';
         
         sections.forEach(section => {
