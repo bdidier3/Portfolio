@@ -1375,3 +1375,82 @@ body.sidebar-closed .sidebar-toggle {
 body.sidebar-closed .sidebar-toggle i {
     transform: rotate(180deg);
 }
+
+/* Logo Carousel */
+.logo-carousel {
+    background-color: #ffffff; /* Fond blanc pur */
+    overflow: hidden;
+    position: relative;
+    padding: 40px 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.carousel-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+    background-color: transparent;
+}
+
+.carousel-track {
+    animation: scroll 20s linear infinite;
+    display: flex;
+    width: fit-content;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-180px * 6)); }
+}
+
+.carousel-item {
+    width: 180px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.carousel-item i {
+    font-size: 5.5rem;
+    color: rgba(0, 0, 0, 0.6) !important;
+}
+
+/* Media queries pour la responsivité */
+@media (max-width: 768px) {
+    .carousel-item {
+        width: 140px;
+        height: 100px;
+    }
+    
+    .carousel-item i {
+        font-size: 4rem;
+    }
+    
+    @keyframes scroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(calc(-140px * 6)); }
+    }
+}
+
+/* Couleur unifiée pour tous les logos */
+.fa-html5,
+.fa-css3-alt,
+.fa-js,
+.fa-python,
+.fa-java,
+.fa-flask,
+.fa-terminal,
+.fa-git-alt,
+.fa-laptop-code,
+.fa-code,
+.fa-react,
+.fa-node-js,
+.fa-php,
+.fa-angular,
+.fa-vuejs {
+    color: rgba(0, 0, 0, 0.6) !important;
+}
