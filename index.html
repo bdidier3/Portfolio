@@ -167,123 +167,117 @@
 
     <section id="projets" class="projects">
         <div class="container">
-            <div class="terminal-header">
-                <span>baptiste@portfolio:~/projets$</span>
-                <span class="terminal-title">ls -la</span>
+            <h2>Mes projets</h2>
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">tous</button>
+                <button class="filter-btn" data-filter="web">web</button>
+                <button class="filter-btn" data-filter="java">java</button>
+                <button class="filter-btn" data-filter="python">python</button>
+                <button class="filter-btn" data-filter="mobile">mobile</button>
+                <button class="filter-btn" data-filter="autre">autre</button>
             </div>
-            <div class="terminal-container">
-                <h2 class="section-title">Mes projets</h2>
-                <div class="project-filters">
-                    <button class="filter-btn active" data-filter="all">tous</button>
-                    <button class="filter-btn" data-filter="web">web</button>
-                    <button class="filter-btn" data-filter="java">java</button>
-                    <button class="filter-btn" data-filter="python">python</button>
-                    <button class="filter-btn" data-filter="mobile">mobile</button>
-                    <button class="filter-btn" data-filter="autre">autre</button>
-                </div>
-                <div class="project-grid">
-                    <!-- Projet 1 -->
-                    <div class="project-card" data-category="web">
-                        <div class="project-image">
-                            <img src="images/image.png" alt="Projet 1">
-                        </div>
-                        <div class="project-info">
-                            <h3>Site E-commerce</h3>
-                            <p>Développement d'une boutique en ligne destiné à la vente de câble.</p>
-                            <div class="project-tags">
-                                <span>HTML</span>
-                                <span>CSS</span>
-                                <span>JavaScript</span>
-                                <span>Flask</span>
-                                <span>Python</span>
-                                <span>SQL</span>
-                            </div>
-                            <a href="https://github.com/bdidier1/SAE2.04" class="project-link">voir le projet <i class="fas fa-arrow-right"></i></a>
-                        </div>
+            <div class="project-grid">
+                <!-- Projet 1 -->
+                <div class="project-card" data-category="web">
+                    <div class="project-image">
+                        <img src="images/image.png" alt="Projet 1">
                     </div>
-                    <!-- Projet 2 -->
-                    <div class="project-card" data-category="java">
-                        <div class="project-image">
-                            <img src="images/pauvocoder.png" alt="Projet 2">
+                    <div class="project-info">
+                        <h3>Site E-commerce</h3>
+                        <p>Développement d'une boutique en ligne destiné à la vente de câble.</p>
+                        <div class="project-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span>Flask</span>
+                            <span>Python</span>
+                            <span>SQL</span>
                         </div>
-                        <div class="project-info">
-                            <h3>Pauvocoder</h3>
-                            <p>Code permettant de manipuler des fichiers audio en appliquant diverses transformations.</p>
-                            <div class="project-tags">
-                                <span>Java</span>
-                            </div>
-                            <a href="https://github.com/bdidier1/SAE1.01-02" class="project-link">voir le projet <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                    <!-- Projet 3 -->
-                    <div class="project-card" data-category="python">
-                        <div class="project-image">
-                            <img src="images/discord-bot.png" alt="Projet 3">
-                        </div>
-                        <div class="project-info">
-                            <h3>Bot Discord</h3>
-                            <p>Bot permettant d'afficher les temps d'attente dans différents parcs d'attractions depuis Discord. </p>
-                            <div class="project-tags">
-                                <span>Python</span>
-                            </div>
-                            <a href="https://github.com/bdidier1/discord_bot_times" class="project-link">voir le projet <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                    
-                    <!-- Projet 4 (caché par défaut) -->
-                    <div class="project-card hidden-project" data-category="web" style="display: none;">
-                        <div class="project-image">
-                            <img src="images/portfolio.png" alt="Portfolio">
-                        </div>
-                        <div class="project-info">
-                            <h3>Portfolio Personnel</h3>
-                            <p>Conception et développement de mon portfolio personnel pour présenter mes projets et compétences.</p>
-                            <div class="project-tags">
-                                <span>HTML</span>
-                                <span>CSS</span>
-                                <span>JavaScript</span>
-                            </div>
-                            <a href="https://github.com/bdidier1/portfolio" class="project-link">voir le projet <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                    
-                    <!-- Projet 5 (caché par défaut) -->
-                    <div class="project-card hidden-project" data-category="python" style="display: none;">
-                        <div class="project-image">
-                            <img src="images/data-analysis.png" alt="Analyse de données">
-                        </div>
-                        <div class="project-info">
-                            <h3>Analyse de données</h3>
-                            <p>Projet d'analyse de données météorologiques avec visualisation des tendances et prédictions.</p>
-                            <div class="project-tags">
-                                <span>Python</span>
-                                <span>Pandas</span>
-                                <span>Matplotlib</span>
-                            </div>
-                            <a href="#" class="project-link">voir le projet <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                    
-                    <!-- Projet 6 (caché par défaut) -->
-                    <div class="project-card hidden-project" data-category="mobile" style="display: none;">
-                        <div class="project-image">
-                            <img src="images/mobile-app.png" alt="Application mobile">
-                        </div>
-                        <div class="project-info">
-                            <h3>Application Mobile</h3>
-                            <p>Application mobile de gestion de tâches avec notifications et synchronisation cloud.</p>
-                            <div class="project-tags">
-                                <span>React Native</span>
-                                <span>JavaScript</span>
-                                <span>Firebase</span>
-                            </div>
-                            <a href="#" class="project-link">voir le projet <i class="fas fa-arrow-right"></i></a>
-                        </div>
+                        <a href="https://github.com/bdidier1/SAE2.04" class="project-link">voir le projet <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-                <div class="show-more-container">
-                    <button id="show-more-btn" class="btn primary-btn show-more-btn">Afficher plus de projets <i class="fas fa-chevron-down"></i></button>
+                <!-- Projet 2 -->
+                <div class="project-card" data-category="java">
+                    <div class="project-image">
+                        <img src="images/pauvocoder.png" alt="Projet 2">
+                    </div>
+                    <div class="project-info">
+                        <h3>Pauvocoder</h3>
+                        <p>Code permettant de manipuler des fichiers audio en appliquant diverses transformations.</p>
+                        <div class="project-tags">
+                            <span>Java</span>
+                        </div>
+                        <a href="https://github.com/bdidier1/SAE1.01-02" class="project-link">voir le projet <i class="fas fa-arrow-right"></i></a>
+                    </div>
                 </div>
+                <!-- Projet 3 -->
+                <div class="project-card" data-category="python">
+                    <div class="project-image">
+                        <img src="images/discord-bot.png" alt="Projet 3">
+                    </div>
+                    <div class="project-info">
+                        <h3>Bot Discord</h3>
+                        <p>Bot permettant d'afficher les temps d'attente dans différents parcs d'attractions depuis Discord. </p>
+                        <div class="project-tags">
+                            <span>Python</span>
+                        </div>
+                        <a href="https://github.com/bdidier1/discord_bot_times" class="project-link">voir le projet <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Projet 4 (caché par défaut) -->
+                <div class="project-card hidden-project" data-category="web" style="display: none;">
+                    <div class="project-image">
+                        <img src="images/portfolio.png" alt="Portfolio">
+                    </div>
+                    <div class="project-info">
+                        <h3>Portfolio Personnel</h3>
+                        <p>Conception et développement de mon portfolio personnel pour présenter mes projets et compétences.</p>
+                        <div class="project-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                        <a href="https://github.com/bdidier1/portfolio" class="project-link">voir le projet <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Projet 5 (caché par défaut) -->
+                <div class="project-card hidden-project" data-category="python" style="display: none;">
+                    <div class="project-image">
+                        <img src="images/data-analysis.png" alt="Analyse de données">
+                    </div>
+                    <div class="project-info">
+                        <h3>Analyse de données</h3>
+                        <p>Projet d'analyse de données météorologiques avec visualisation des tendances et prédictions.</p>
+                        <div class="project-tags">
+                            <span>Python</span>
+                            <span>Pandas</span>
+                            <span>Matplotlib</span>
+                        </div>
+                        <a href="#" class="project-link">voir le projet <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Projet 6 (caché par défaut) -->
+                <div class="project-card hidden-project" data-category="mobile" style="display: none;">
+                    <div class="project-image">
+                        <img src="images/mobile-app.png" alt="Application mobile">
+                    </div>
+                    <div class="project-info">
+                        <h3>Application Mobile</h3>
+                        <p>Application mobile de gestion de tâches avec notifications et synchronisation cloud.</p>
+                        <div class="project-tags">
+                            <span>React Native</span>
+                            <span>JavaScript</span>
+                            <span>Firebase</span>
+                        </div>
+                        <a href="#" class="project-link">voir le projet <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="show-more-container">
+                <button id="show-more-btn" class="btn primary-btn show-more-btn">Afficher plus de projets <i class="fas fa-chevron-down"></i></button>
             </div>
         </div>
     </section>

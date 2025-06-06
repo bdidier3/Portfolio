@@ -1122,31 +1122,15 @@ footer a {
     background: var(--bg-color);
 }
 
-.terminal-header {
-    background: #2d2d2d;
-    color: white;
-    padding: 15px 20px;
-    border-radius: 8px 8px 0 0;
-    margin-bottom: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-family: 'Courier New', monospace;
-}
-
-.terminal-title {
-    color: #4caf50;
-}
-
-.section-title {
+#projets h2 {
     font-size: 2.2rem;
-    margin-bottom: 30px;
-    color: var(--heading-color);
     text-align: center;
+    margin-bottom: 40px;
+    color: var(--heading-color);
     position: relative;
 }
 
-.section-title::after {
+#projets h2:after {
     content: '';
     position: absolute;
     width: 80px;
@@ -1160,29 +1144,53 @@ footer a {
 .project-filters {
     display: flex;
     justify-content: center;
-    margin-bottom: 30px;
-    gap: 15px;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 30px 0 40px;
 }
 
 .filter-btn {
-    padding: 8px 20px;
-    background: #f5f5f5;
-    border: none;
-    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #666;
+    background: #fff;
+    border: 2px solid var(--primary-color);
+    border-radius: 25px;
     cursor: pointer;
     transition: all 0.3s ease;
-    font-weight: 600;
-    color: var(--text-color);
+    text-transform: capitalize;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-.filter-btn.active,
 .filter-btn:hover {
     background: var(--primary-color);
-    color: #333333;
-    border: 1px solid rgba(0, 0, 0, 0.2);
+    color: #333;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.filter-btn.active {
+    background: var(--primary-color);
+    color: #333;
+    border-color: var(--primary-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .project-filters {
+        gap: 8px;
+    }
+    
+    .filter-btn {
+        padding: 8px 16px;
+        font-size: 0.85rem;
+    }
+}
+
+/* Projects grid and card styles */
 .project-grid {
+    margin-top: 40px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 30px;
