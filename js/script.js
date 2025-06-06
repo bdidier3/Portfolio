@@ -247,4 +247,29 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     });
-}); 
+    
+    // Timeline animation
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    
+    const timelineOptions = {
+        threshold: 0.2,
+        rootMargin: "0px 0px -50px 0px"
+    };
+    
+    const timelineObserver = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+                timelineObserver.unobserve(entry.target);
+            }
+        });
+    }, timelineOptions);
+    
+    timelineItems.forEach(item => {
+        item.style.opacity = '0';
+        item.style.transform = 'translateY(50px)';
+        item.style.transition = 'all 0.6s ease';
+        timelineObserver.observe(item);
+    });
+});
