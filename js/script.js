@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Gestion du formulaire de contact
     const form = document.getElementById('contact-form');
     const formMessage = document.getElementById('form-message');
-    
+
     if (form) {
         form.addEventListener('submit', function(e) {
             e.preventDefault();
@@ -91,23 +91,23 @@ document.addEventListener('DOMContentLoaded', function() {
             const originalText = button.textContent;
             button.textContent = 'Envoi en cours...';
             button.disabled = true;
-            
-            // Simuler un délai d'envoi (remplacer par un vrai envoi AJAX dans un environnement de production)
+
+            // Simuler un délai avant d'afficher le message d'erreur
             setTimeout(() => {
-                formMessage.textContent = 'Merci pour votre message ! Je vous répondrai dès que possible.';
+                formMessage.textContent = 'Pour me contacter, veuillez utiliser directement mon adresse email : baptiste.didier@proton.me';
+                formMessage.className = 'error';
                 formMessage.style.opacity = '0';
                 formMessage.style.display = 'block';
                 
-                // Fade in animation
+                // Animation du message
                 setTimeout(() => {
                     formMessage.style.transition = 'opacity 0.5s ease';
                     formMessage.style.opacity = '1';
                 }, 10);
                 
-                form.reset();
                 button.textContent = originalText;
                 button.disabled = false;
-            }, 1500);
+            }, 1000);
         });
     }
     
@@ -177,39 +177,44 @@ document.addEventListener('DOMContentLoaded', function() {
         fadeInObserver.observe(element);
     });
 
-    // Afficher plus/moins de projets
+    // Gestion des boutons "voir plus" et "voir moins"
     const showMoreBtn = document.getElementById('show-more-btn');
-    const showLessBtn = document.getElementById('show-less-btn');
     const hiddenProjects = document.querySelectorAll('.hidden-project');
-    
-    if (showMoreBtn && showLessBtn && hiddenProjects.length > 0) {
-        showMoreBtn.addEventListener('click', function() {
-            hiddenProjects.forEach((project, index) => {
-                project.style.display = 'block';
-                project.style.opacity = '0';
-                
-                setTimeout(() => {
-                    project.style.opacity = '1';
-                    project.style.transform = 'translateY(0)';
-                }, index * 100);
-            });
-            
-            showMoreBtn.style.display = 'none';
-            showLessBtn.style.display = 'block';
-        });
 
-        showLessBtn.addEventListener('click', function() {
-            hiddenProjects.forEach((project) => {
-                project.style.opacity = '0';
-                project.style.transform = 'translateY(20px)';
-                
-                setTimeout(() => {
-                    project.style.display = 'none';
-                }, 300);
-            });
+    if (showMoreBtn && hiddenProjects.length > 0) {
+        showMoreBtn.addEventListener('click', function() {
+            const isShowingMore = this.getAttribute('data-showing') !== 'true';
             
-            showLessBtn.style.display = 'none';
-            showMoreBtn.style.display = 'block';
+            hiddenProjects.forEach(project => {
+                if (isShowingMore) {
+                    project.style.display = 'block';
+                    setTimeout(() => {
+                        project.classList.add('visible');
+                    }, 10);
+                } else {
+                    project.classList.remove('visible');
+                    setTimeout(() => {
+                        project.style.display = 'none';
+                    }, 300);
+                }
+            });
+
+            // Modifier le texte et l'icône du bouton
+            if (isShowingMore) {
+                this.innerHTML = 'Voir moins de projets <i class="fas fa-chevron-up"></i>';
+                this.setAttribute('data-showing', 'true');
+            } else {
+                this.innerHTML = 'Afficher plus de projets <i class="fas fa-chevron-down"></i>';
+                this.setAttribute('data-showing', 'false');
+            }
+            
+            // Faire défiler jusqu'au dernier projet visible si on masque les projets
+            if (!isShowingMore) {
+                const lastVisibleProject = document.querySelector('.project-card:not(.hidden-project):last-child');
+                if (lastVisibleProject) {
+                    lastVisibleProject.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }
+            }
         });
     }
 
