@@ -177,14 +177,16 @@ document.addEventListener('DOMContentLoaded', function() {
         fadeInObserver.observe(element);
     });
 
-    // Afficher plus de projets
+    // Afficher plus/moins de projets
     const showMoreBtn = document.getElementById('show-more-btn');
+    const showLessBtn = document.getElementById('show-less-btn');
     const hiddenProjects = document.querySelectorAll('.hidden-project');
     
-    if (showMoreBtn && hiddenProjects.length > 0) {
+    if (showMoreBtn && showLessBtn && hiddenProjects.length > 0) {
         showMoreBtn.addEventListener('click', function() {
             hiddenProjects.forEach((project, index) => {
                 project.style.display = 'block';
+                project.style.opacity = '0';
                 
                 setTimeout(() => {
                     project.style.opacity = '1';
@@ -192,7 +194,22 @@ document.addEventListener('DOMContentLoaded', function() {
                 }, index * 100);
             });
             
-            this.style.display = 'none';
+            showMoreBtn.style.display = 'none';
+            showLessBtn.style.display = 'block';
+        });
+
+        showLessBtn.addEventListener('click', function() {
+            hiddenProjects.forEach((project) => {
+                project.style.opacity = '0';
+                project.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    project.style.display = 'none';
+                }, 300);
+            });
+            
+            showLessBtn.style.display = 'none';
+            showMoreBtn.style.display = 'block';
         });
     }
 
@@ -211,10 +228,10 @@ document.addEventListener('DOMContentLoaded', function() {
             const filter = this.getAttribute('data-filter');
             
             projectCards.forEach(card => {
-                const category = card.getAttribute('data-category');
+                const categories = card.getAttribute('data-category').split(',');
                 
                 if (filter === 'all') {
-                    // Pour le filtre "all", on affiche seulement les 3 premiers projets et on garde le bouton "Afficher plus"
+                    // Pour le filtre "all", on affiche seulement les 3 premiers projets
                     if (card.classList.contains('hidden-project')) {
                         card.style.display = 'none';
                         card.style.opacity = '0';
@@ -227,8 +244,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                     if (showMoreBtn) showMoreBtn.style.display = 'block';
                 } else {
-                    // Pour les autres filtres, on affiche tous les projets correspondants
-                    if (category === filter) {
+                    // Pour les autres filtres, on vérifie si la catégorie est présente
+                    if (categories.includes(filter)) {
                         card.style.display = 'block';
                         setTimeout(() => {
                             card.style.opacity = '1';
