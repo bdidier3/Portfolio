@@ -182,37 +182,45 @@ document.addEventListener('DOMContentLoaded', function() {
     const hiddenProjects = document.querySelectorAll('.hidden-project');
 
     if (showMoreBtn && hiddenProjects.length > 0) {
+        // Cacher les projets au chargement
+        hiddenProjects.forEach(project => {
+            project.style.display = 'none';
+            project.style.opacity = '0';
+            project.style.transform = 'translateY(20px)';
+        });
+
         showMoreBtn.addEventListener('click', function() {
             const isShowingMore = this.getAttribute('data-showing') !== 'true';
             
-            hiddenProjects.forEach(project => {
-                if (isShowingMore) {
-                    project.style.display = 'block';
-                    setTimeout(() => {
-                        project.classList.add('visible');
-                    }, 10);
-                } else {
-                    project.classList.remove('visible');
-                    setTimeout(() => {
-                        project.style.display = 'none';
-                    }, 300);
-                }
-            });
-
-            // Modifier le texte et l'icône du bouton
             if (isShowingMore) {
+                // Afficher plus de projets
+                hiddenProjects.forEach(project => {
+                    project.style.display = 'block';
+                    // Utiliser un setTimeout pour permettre l'animation
+                    setTimeout(() => {
+                        project.style.opacity = '1';
+                        project.style.transform = 'translateY(0)';
+                    }, 50);
+                });
                 this.innerHTML = 'Voir moins de projets <i class="fas fa-chevron-up"></i>';
                 this.setAttribute('data-showing', 'true');
             } else {
+                // Cacher les projets
+                hiddenProjects.forEach(project => {
+                    project.style.opacity = '0';
+                    project.style.transform = 'translateY(20px)';
+                    // Attendre la fin de l'animation avant de cacher
+                    setTimeout(() => {
+                        project.style.display = 'none';
+                    }, 300);
+                });
                 this.innerHTML = 'Afficher plus de projets <i class="fas fa-chevron-down"></i>';
                 this.setAttribute('data-showing', 'false');
-            }
-            
-            // Faire défiler jusqu'au dernier projet visible si on masque les projets
-            if (!isShowingMore) {
+                
+                // Défiler jusqu'au dernier projet visible
                 const lastVisibleProject = document.querySelector('.project-card:not(.hidden-project):last-child');
                 if (lastVisibleProject) {
-                    lastVisibleProject.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    lastVisibleProject.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 }
             }
         });
