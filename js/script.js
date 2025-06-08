@@ -182,45 +182,37 @@ document.addEventListener('DOMContentLoaded', function() {
     const hiddenProjects = document.querySelectorAll('.hidden-project');
 
     if (showMoreBtn && hiddenProjects.length > 0) {
-        // Cacher les projets au chargement
-        hiddenProjects.forEach(project => {
-            project.style.display = 'none';
-            project.style.opacity = '0';
-            project.style.transform = 'translateY(20px)';
-        });
-
         showMoreBtn.addEventListener('click', function() {
             const isShowingMore = this.getAttribute('data-showing') !== 'true';
             
-            if (isShowingMore) {
-                // Afficher plus de projets
-                hiddenProjects.forEach(project => {
+            hiddenProjects.forEach(project => {
+                if (isShowingMore) {
                     project.style.display = 'block';
-                    // Utiliser un setTimeout pour permettre l'animation
                     setTimeout(() => {
-                        project.style.opacity = '1';
-                        project.style.transform = 'translateY(0)';
-                    }, 50);
-                });
-                this.innerHTML = 'Voir moins de projets <i class="fas fa-chevron-up"></i>';
-                this.setAttribute('data-showing', 'true');
-            } else {
-                // Cacher les projets
-                hiddenProjects.forEach(project => {
-                    project.style.opacity = '0';
-                    project.style.transform = 'translateY(20px)';
-                    // Attendre la fin de l'animation avant de cacher
+                        project.classList.add('visible');
+                    }, 10);
+                } else {
+                    project.classList.remove('visible');
                     setTimeout(() => {
                         project.style.display = 'none';
                     }, 300);
-                });
+                }
+            });
+
+            // Modifier le texte et l'icône du bouton
+            if (isShowingMore) {
+                this.innerHTML = 'Voir moins de projets <i class="fas fa-chevron-up"></i>';
+                this.setAttribute('data-showing', 'true');
+            } else {
                 this.innerHTML = 'Afficher plus de projets <i class="fas fa-chevron-down"></i>';
                 this.setAttribute('data-showing', 'false');
-                
-                // Défiler jusqu'au dernier projet visible
+            }
+            
+            // Faire défiler jusqu'au dernier projet visible si on masque les projets
+            if (!isShowingMore) {
                 const lastVisibleProject = document.querySelector('.project-card:not(.hidden-project):last-child');
                 if (lastVisibleProject) {
-                    lastVisibleProject.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    lastVisibleProject.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
                 }
             }
         });
@@ -302,4 +294,73 @@ document.addEventListener('DOMContentLoaded', function() {
         item.style.transition = 'all 0.6s ease';
         timelineObserver.observe(item);
     });
+    
+    // Modal functionality
+    function openModal(modalId) {
+        const modal = document.getElementById(modalId);
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal(modalId) {
+        const modal = document.getElementById(modalId);
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+
+    // Modal handling
+    const modals = document.querySelectorAll('.modal');
+    const closeButtons = document.querySelectorAll('.close-btn');
+
+    // Open modal function
+    window.openModal = function(modalId) {
+        document.getElementById(modalId).style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Close modal when clicking on close button
+    closeButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+            this.closest('.modal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+    });
+
+    // Close modal when clicking outside
+    modals.forEach(modal => {
+        modal.addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+    });
+
+    // Fullscreen image functionality
+    window.openImageFullscreen = function(imgSrc) {
+        const modal = document.getElementById('fullscreen-modal');
+        const fullscreenImage = document.getElementById('fullscreen-image');
+        
+        fullscreenImage.src = imgSrc;
+        modal.style.display = 'flex';
+
+        // Fermer avec la croix
+        document.querySelector('.close-fullscreen').onclick = function() {
+            modal.style.display = 'none';
+        }
+
+        // Fermer en cliquant en dehors de l'image
+        modal.onclick = function(e) {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        // Fermer avec la touche Échap
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                modal.style.display = 'none';
+            }
+        });
+    }
 });

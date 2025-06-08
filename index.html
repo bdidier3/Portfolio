@@ -193,7 +193,7 @@
                             <span>SQL</span>
                         </div>
                         <div class="project-buttons">
-                            <button class="btn details-btn">Détails du projet</button>
+                            <button class="btn details-btn" onclick="openModal('ecommerce-details')">Détails du projet</button>
                             <a href="https://github.com/bdidier1/SAE2.04" class="project-link">Voir le projet <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
@@ -211,7 +211,7 @@
                             <span>Java</span>
                         </div>
                         <div class="project-buttons">
-                            <button class="btn details-btn">Détails du projet</button>
+                            <button class="btn details-btn" onclick="openModal('pauvocoder-details')">Détails du projet</button>
                             <a href="https://github.com/bdidier1/SAE1.01-02" class="project-link">Voir le projet <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
@@ -550,6 +550,72 @@
             </div>
         </div>
     </footer>
+    <div id="ecommerce-details" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="modal-image-container">
+                <img src="images/figure1.png" alt="Figure 1 - Page de détails Cablissimo" class="zoomable-image" onclick="openImageFullscreen(this.src)">
+                <div class="modal-image-caption">
+                    <h3>Figure 1 : Interface de notation et de commentaires du site e-commerce Cablissimo</h3>
+                </div>
+            </div>
+            <div class="modal-text">
+                <p>La Figure 1 est une capture d'écran de la page de détails d'un article sur le site e-commerce Cablissimo, que j'ai développé en équipe dans le cadre d'un projet web avec le langage de programmation Python et le framework Flask. L'objectif de cette page est d'afficher les informations d'un produit et de permettre aux utilisateurs d'interagir avec celui-ci à travers deux fonctionnalités principales : la notation (sur 5) et les commentaires. L'utilisateur peut modifier sa note ou la supprimer, et publier jusqu'à trois commentaires maximum par article acheté.</p>
+
+                <p>La conception de cette page a nécessité la mobilisation de plusieurs compétences techniques. D'abord, il a fallu concevoir la structure de la base de données pour gérer les articles, les déclinaisons (couleur, longueur), les notes et les commentaires, en veillant à garantir l'intégrité des données (par exemple, un utilisateur ne peut noter un article qu'une seule fois, et seulement s'il l'a acheté). Ensuite, j'ai développé la logique côté serveur, en Python, pour récupérer dynamiquement toutes les informations nécessaires : détails de l'article, statistiques de notes (moyenne, nombre de notes), liste des commentaires validés, et droits de l'utilisateur courant (peut-il commenter ou noter ?).</p>
+
+                <p>Au milieu de la Figure 1 illustre l'interface utilisateur générée avec le moteur de templates Jinja2. On y voit la note moyenne de l'article, le nombre de notes, ainsi qu'un formulaire permettant à l'utilisateur de donner une note ou de la modifier. Plus bas, la liste des commentaires est affichée, avec une différenciation visuelle entre les commentaires validés (fond vert) et ceux en attente de validation. Les utilisateurs peuvent également supprimer leurs propres commentaires ou notes, ce qui implique une gestion fine des droits et des contrôles côté serveur.</p>
+
+                <p>La mise en œuvre de cette page m'a permis de développer mes compétences en conception de bases de données relationnelles, en développement web avec Flask, et en gestion de la sécurité (contrôle d'accès, validation des entrées utilisateur). J'ai également appris à structurer le code pour séparer la logique métier (contrôleurs Python) de la présentation (templates HTML), ce qui facilite la maintenance et l'évolution du projet.</p>
+
+                <p>Enfin, cette page illustre ma capacité à proposer une expérience utilisateur complète et sécurisée, en intégrant des fonctionnalités interactives avancées (notation, commentaires, gestion des droits) tout en respectant les bonnes pratiques du développement web. Même si certaines parties pourraient encore être optimisées (par exemple, améliorer la gestion des réponses aux commentaires ou l'affichage en temps réel des nouvelles notes), ce travail démontre ma compréhension des enjeux d'un site e-commerce moderne et ma capacité à les mettre en œuvre techniquement.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div id="pauvocoder-details" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="modal-image-container">
+                <img src="images/figure2.png" alt="Figure 2 - Configuration Pauvocoder" class="zoomable-image" onclick="openImageFullscreen(this.src)">
+                <div class="modal-image-caption">
+                    <h3>Figure 2 : Configuration d'une exécution paramétrée dans IntelliJ IDEA pour le projet Pauvocodeur</h3>
+                </div>
+            </div>
+            <div class="modal-text">
+                <p>La Figure 2 est une capture d'écran de l'environnement IntelliJ IDEA, utilisée dans le cadre du projet Pauvocodeur, que j'ai réalisé en binôme en Java. L'objectif de ce projet était de développer une application capable de traiter des fichiers audio .wav en appliquant différentes transformations comme le changement de fréquence (rééchantillonnage), la modification de la durée (dilatation temporelle), l'ajout d'un effet d'écho, ou encore l'amélioration de la qualité via des techniques de chevauchement et de corrélation croisée.</p>
+
+                <p>Dans le cadre de ce projet, l'exécution du programme repose sur le passage de paramètres utilisateur, ici le nom du fichier audio à traiter et le facteur de fréquence à appliquer. L'un des savoirs essentiels mobilisés est donc la capacité à gérer les arguments passés à la méthode main() d'un programme Java, ce qui permet de rendre le programme adaptable à différentes entrées sans modifier le code.</p>
+
+                <p>La Figure 2 montre l'interface de configuration d'une exécution dans IntelliJ IDEA, avec des éléments importants comme :</p>
+                <ul>
+                    <li>le nom de la classe principale (Pauvocoder), qui contient le point d'entrée main() ;</li>
+                    <li>le chemin du répertoire de travail, assurant que les fichiers audio sont correctement lus et écrits ;</li>
+                    <li>le JDK sélectionné (Java 23) ;</li>
+                    <li>et surtout les arguments linformatique.wav 2, qui spécifient le fichier d'entrée et le facteur de fréquence à utiliser.</li>
+                </ul>
+
+                <p>Configurer ainsi une exécution paramétrée depuis l'IDE permet de simuler une ligne de commande et de lancer rapidement différentes variantes de traitement, ce qui est indispensable pour tester et comparer les effets des transformations. Cela montre aussi la capacité à utiliser efficacement un environnement de développement professionnel pour automatiser les tests.</p>
+
+                <p>À gauche de l'interface, on distingue l'arborescence du projet, avec notamment plusieurs fichiers .wav générés automatiquement par le programme (Resampled.wav, Simple.wav, SimpleOver.wav, etc.). Leur présence prouve que le programme a bien effectué les traitements audio prévus. De plus, le fichier output_log.txt contient les sorties console redirigées, offrant une trace complète de l'exécution, ce qui est utile pour le débogage et la validation.</p>
+
+                <p>Ce travail mobilise plusieurs savoirs fondamentaux :</p>
+                <ul>
+                    <li>la compréhension du cycle de vie d'un programme Java avec arguments ;</li>
+                    <li>la maîtrise de la configuration d'un projet dans IntelliJ IDEA ;</li>
+                    <li>les bases du traitement du signal audio numérique.</li>
+                </ul>
+
+                <p>Cette trace illustre des savoirs et savoir-faire appartenant principalement aux compétences 1 (Développement d'application) et 4 (Conduite de projet informatique) du programme de BUT Informatique, et constitue une preuve concrète de ma capacité à développer, paramétrer et tester un logiciel fonctionnel à partir de besoins techniques bien définis.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ajout du fullscreen modal -->
+    <div id="fullscreen-modal" class="fullscreen-modal">
+        <span class="close-fullscreen">&times;</span>
+        <img id="fullscreen-image" src="" alt="Image en plein écran">
+    </div>
     <script src="js/script.js"></script>
 </body>
 </html>
