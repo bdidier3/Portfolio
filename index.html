@@ -561,41 +561,18 @@
             </div>
             <div class="modal-text">
                 <p>
-                    La <strong>Figure 1</strong> est une capture d'écran de la page de détails d'un article sur le site e-commerce <strong>Cablissimo</strong>, que j'ai développé en équipe dans le cadre d'un projet web avec le langage de programmation <strong>Python</strong> et le framework <strong>Flask</strong>. L'objectif de cette page est d'afficher les informations d'un produit et de permettre aux utilisateurs d'interagir avec celui-ci à travers deux fonctionnalités principales : la <strong>notation</strong> (sur 5) et les <strong>commentaires</strong>. L'utilisateur peut modifier sa note ou la supprimer, et publier jusqu'à <strong>trois commentaires maximum</strong> par article acheté.
-                </p>
-
-                <p>
-                    La conception de cette page a nécessité la mobilisation de plusieurs compétences techniques. Tout d'abord, j'ai dû concevoir la structure de la <strong>base de données</strong> pour gérer les articles, leurs déclinaisons (comme la couleur ou la longueur), les notes et les commentaires. Pour cela, j'ai réalisé un <strong>Modèle Conceptuel de Données (MCD)</strong> à l'aide de l'outil <strong>Looping</strong>, ce qui m'a permis de modéliser les entités, les relations et les contraintes fonctionnelles du système. Ce travail de modélisation a servi de base à la création du schéma relationnel, et donc à la mise en place de la base de données codée avec <strong>SQL</strong>. Ensuite, j'ai développé la logique côté serveur avec le framework <strong>Flask</strong> en <strong>Python</strong>, notamment pour gérer les <strong>routes dynamiques</strong> qui affichent les données de la page.
-                </p>
-
-                <p>
-                    La <strong>Figure 1</strong> illustre l'interface utilisateur de la page de détails d'un article, générée à l'aide du moteur de templates <strong>Jinja2</strong>. Cette interface a été conçue pour permettre aux utilisateurs d'interagir facilement avec le système de notation et de commentaires.
-                </p>
-
-                <p>
-                    <li>Dans le <strong>premier encadré</strong>, on trouve la <strong>note moyenne</strong> de l'article, le <strong>nombre total de notes</strong> enregistrées, ainsi qu'un <strong>formulaire</strong> permettant à l'utilisateur de donner une note ou de modifier une note existante.
-                </li>
-
-                
-                    <li>Le <strong>deuxième encadré</strong> présente les informations liées aux commentaires, notamment un formulaire de saisie permettant à l'utilisateur de publier un commentaire, dans la <strong>limite de trois commentaires</strong> par article commandé.
-                </li>
-
-                
-                    <li>Le <strong>troisième encadré</strong> affiche la liste des commentaires existants, avec une <strong>différenciation visuelle</strong> entre les commentaires validés (affichés en vert) et ceux en attente de validation.
-                                </li>
-
-                    </p>
-
-                <p>
-                    L'utilisateur a également la possibilité de <strong>supprimer ses propres commentaires</strong> ou notes, ce qui nécessite la mise en place d'un <strong>système de contrôle des droits</strong> côté serveur.
-                </p>
-
-                <p>
-                    Ce projet m'a permis de renforcer mes compétences en <strong>développement web fullstack</strong>, et d'acquérir une vision d'ensemble allant de la <strong>modélisation des données</strong> jusqu'à la <strong>mise en forme dynamique</strong> des pages web. Cette trace constitue une preuve solide de ma compréhension des enjeux fonctionnels et techniques liés à une application e-commerce moderne.
-                </p>
-
-                <p class="conclusion">
-                    Cette réalisation s'inscrit dans la <strong>compétence 4 (Gérer des données de l'information)</strong> du BUT Informatique, et montre ma capacité à construire une application web <strong>interactive</strong>, <strong>sécurisée</strong> et <strong>maintenable</strong>, en respectant les bonnes pratiques de développement logiciel.
+               La Figure 1 est une capture d’écran de l’interface client du site e-commerce <b>Cablissimo</b>, que j’ai développé en équipe dans le cadre d’un projet web. Ce site a été conçu avec le langage <b>Python</b> et le framework <b>Flask</b>, en respectant les principes de développement d’une application <b>fullstack</b>. Le projet avait pour but de permettre à un client de consulter les détails d’un produit, de lui attribuer une note, de rédiger jusqu’à <b>trois commentaires par article acheté</b>, et de gérer ses propres avis.
+<br><br>
+L’interface met en œuvre plusieurs fonctionnalités visibles dans les zones encadrées en rouge.<br>
+La première zone (en haut) montre la gestion des <b>notes</b> : l’utilisateur peut saisir une note (sur 5), la modifier ou la supprimer. La <b>note moyenne</b> affichée est recalculée automatiquement à chaque changement, grâce à une requête SQL utilisant des fonctions d’agrégation.<br>
+La deuxième zone rouge permet de rédiger un <b>commentaire</b>, tout en affichant un rappel des règles métier : <b>3 commentaires maximum par article acheté</b>. Cette contrainte est vérifiée à la fois dans le code serveur Flask et dans la base de données, afin de garantir l’intégrité.<br>
+Enfin, la dernière zone affiche les <b>commentaires existants</b>, avec pour chacun le pseudo de l’auteur, son contenu, la date, et un bouton de suppression s’il s’agit de l’auteur connecté. Cela implique une <b>gestion de session</b> pour restreindre les droits d’action à l’utilisateur concerné.
+<br><br>
+Pour cela, nous avons conçu un <b>MCD (modèle conceptuel de données)</b> avec Looping, que nous avons ensuite traduit en <b>modèle relationnel</b>. Les principales entités sont <b>Utilisateur</b>, <b>Article</b>, <b>Commande</b>, <b>Note</b> et <b>Commentaire</b>, reliées par des relations et des contraintes d’intégrité référentielle. Par exemple, il n’est possible de noter ou commenter un article que si l’utilisateur l’a réellement commandé.
+<br><br>
+Le rendu HTML a été généré avec <b>Jinja2</b>, ce qui permet d’adapter dynamiquement l’interface en fonction des données du client connecté. Le tout repose sur une architecture <b>client-serveur</b>, avec des routes Flask qui assurent la logique métier, et une validation des données pour garantir la <b>sécurité</b> de l’application (contre les injections SQL ou les XSS, par exemple).
+<br><br>
+Ce travail m’a permis de mobiliser plusieurs savoirs : la <b>modélisation des bases de données</b>, la <b>programmation web avec Flask</b>, la <b>sécurité des applications web</b>, et la <b>création d’interfaces dynamiques adaptées aux utilisateurs</b>.
                 </p>
             </div>
         </div>
@@ -611,30 +588,19 @@
                 </div>
             </div>
             <div class="modal-text">
-                <p>La Figure 2 est une capture d'écran de l'environnement IntelliJ IDEA, utilisée dans le cadre du projet Pauvocodeur, que j'ai réalisé en binôme en Java. L'objectif de ce projet était de développer une application capable de traiter des fichiers audio .wav en appliquant différentes transformations comme le changement de fréquence (rééchantillonnage), la modification de la durée (dilatation temporelle), l'ajout d'un effet d'écho, ou encore l'amélioration de la qualité via des techniques de chevauchement et de corrélation croisée.</p>
-
-                <p>Dans le cadre de ce projet, l'exécution du programme repose sur le passage de paramètres utilisateur, ici le nom du fichier audio à traiter et le facteur de fréquence à appliquer. L'un des savoirs essentiels mobilisés est donc la capacité à gérer les arguments passés à la méthode main() d'un programme Java, ce qui permet de rendre le programme adaptable à différentes entrées sans modifier le code.</p>
-
-                <p>La Figure 2 montre l'interface de configuration d'une exécution dans IntelliJ IDEA, avec des éléments importants comme :</p>
-                <ul>
-                    <li>le nom de la classe principale (Pauvocoder), qui contient le point d'entrée main() ;</li>
-                    <li>le chemin du répertoire de travail, assurant que les fichiers audio sont correctement lus et écrits ;</li>
-                    <li>le JDK sélectionné (Java 23) ;</li>
-                    <li>et surtout les arguments linformatique.wav 2, qui spécifient le fichier d'entrée et le facteur de fréquence à utiliser.</li>
-                </ul>
-
-                <p>Configurer ainsi une exécution paramétrée depuis l'IDE permet de simuler une ligne de commande et de lancer rapidement différentes variantes de traitement, ce qui est indispensable pour tester et comparer les effets des transformations. Cela montre aussi la capacité à utiliser efficacement un environnement de développement professionnel pour automatiser les tests.</p>
-
-                <p>À gauche de l'interface, on distingue l'arborescence du projet, avec notamment plusieurs fichiers .wav générés automatiquement par le programme (Resampled.wav, Simple.wav, SimpleOver.wav, etc.). Leur présence prouve que le programme a bien effectué les traitements audio prévus. De plus, le fichier output_log.txt contient les sorties console redirigées, offrant une trace complète de l'exécution, ce qui est utile pour le débogage et la validation.</p>
-
-                <p>Ce travail mobilise plusieurs savoirs fondamentaux :</p>
-                <ul>
-                    <li>la compréhension du cycle de vie d'un programme Java avec arguments ;</li>
-                    <li>la maîtrise de la configuration d'un projet dans IntelliJ IDEA ;</li>
-                    <li>les bases du traitement du signal audio numérique.</li>
-                </ul>
-
-                <p>Cette trace illustre des savoirs et savoir-faire appartenant principalement aux compétences 1 (Développement d'application) et 4 (Conduite de projet informatique) du programme de BUT Informatique, et constitue une preuve concrète de ma capacité à développer, paramétrer et tester un logiciel fonctionnel à partir de besoins techniques bien définis.</p>
+            <p>
+                La figure 2 est une capture de l’interface d’<b>IntelliJ IDEA</b>, un <b>environnement de développement intégré (IDE)</b> qui facilite grandement la création et l’exécution de programmes en <b>Java</b>. J’ai utilisé cet outil pour développer un projet nommé <b>“Pauvocodeur”</b>, destiné au <b>traitement numérique de fichiers audio</b> au format .wav.
+<br><br>
+Dans ce projet, la <b>configuration de l’exécution du programme</b> est un élément clé, notamment parce que le programme attend des <b>paramètres en ligne de commande</b> pour fonctionner correctement. Ces paramètres permettent de spécifier, par exemple, le nom du fichier audio à traiter ainsi que certains réglages numériques, comme un facteur de modification de fréquence.
+<br><br>
+Dans la partie droite de la figure 2, on distingue clairement la <b>fenêtre de configuration d’exécution</b> d’IntelliJ IDEA, dans laquelle j’ai renseigné la <b>classe principale</b> contenant la méthode main, ainsi que les <b>arguments passés lors du lancement du programme</b>. Ici, les arguments <b>linformatique.wav 2</b> indiquent que le programme doit ouvrir le fichier nommé linformatique.wav et appliquer un facteur de fréquence égal à 2.
+<br><br>
+Sur la partie gauche de la figure 2, l’<b>arborescence du projet</b> montre plusieurs fichiers générés automatiquement, notamment des fichiers .wav issus des traitements, ainsi qu’un fichier texte contenant la sortie console du programme. Cette organisation témoigne d’une <b>bonne gestion des fichiers et des résultats</b> dans le système.
+<br><br>
+Cette configuration dans IntelliJ IDEA facilite la <b>gestion des paramètres d’exécution</b> et le <b>test rapide de différentes options</b>, sans nécessiter de modification du code source. Cela illustre ma <b>maîtrise de l’IDE</b> pour compiler, exécuter et déboguer efficacement un programme Java.
+<br><br>
+En résumé, la figure 2 met en évidence l’importance de bien <b>configurer l’exécution d’un programme Java dans un IDE</b>, notamment quand celui-ci doit traiter des fichiers locaux et recevoir des arguments en ligne de commande, ce qui est essentiel pour le projet Pauvocodeur.
+            </p>    
             </div>
         </div>
     </div>
