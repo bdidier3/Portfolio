@@ -26,7 +26,6 @@
             <nav>
                 <ul>
                     <li><a href="#about">À propos</a></li>
-                    <li><a href="#timeline">Parcours</a></li>
                     <li><a href="#projets">Projets</a></li>
                     <li><a href="#skills">Compétences</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -89,9 +88,9 @@
                 <h2>À propos de moi</h2>
                 <div class="about-content">
                     <div class="about-text">
-                        <p>Bonjour, je m'appelle Baptiste Didier, j'ai 18 ans et je suis actuellement étudiant en première année de BUT Informatique à l'IUT Nord-Franche-Comté. Passionné par le développement web, la programmation et les nouvelles technologies, j’ai à cœur de mettre mes compétences en pratique à travers des projets concrets et enrichissants.</p>
+                        <p>Bonjour, je m'appelle Baptiste Didier, j’ai 18 ans et je suis étudiant en première année de BUT Informatique à l’IUT Nord-Franche-Comté. Je suis passionné par tout ce qui touche au développement web, à la programmation et à l'informatique en général.</p>
 
-                        <p>Mon parcours académique, enrichi par mes projets personnels, m’a permis d’acquérir les bases de plusieurs langages web tels que HTML, CSS et JavaScript, ainsi que de certains frameworks comme Flask, basé sur Python. J’ai également des notions en SQL, me permettant de gérer des bases de données.</p>
+                        <p>Depuis le collège, je m’intéresse beaucoup à l’informatique, ce qui m’a motivé à me lancer dans ce domaine. J’ai déjà pu apprendre les bases de plusieurs langages comme HTML, CSS et JavaScript, et j’ai aussi commencé à utiliser des outils comme Flask, qui fonctionne avec le langage Python. J’ai aussi quelques connaissances en SQL pour gérer des bases de données.</p>
 
                         <p>Je souhaite poursuivre ma formation en BUT Informatique afin de pouvoir, par la suite, exercer un métier qui me passionne.</p>
 
@@ -101,67 +100,6 @@
                         <img src="images/IMG_profil.png" alt="Baptiste Didier">
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="timeline">
-        <div class="container">
-            <h2>Mon Parcours</h2>
-            <div class="timeline">
-                <!-- Timeline Item 1 -->
-                <div class="timeline-item">
-                    <div class="timeline-dot">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <div class="timeline-date">2025 - Aujourd'hui</div>
-                    <div class="timeline-content">
-                        <h3>BUT Informatique</h3>
-                        <span class="timeline-location">IUT de Belfort - Université de Franche-Comté</span>
-                        <p class="timeline-description">Formation polyvalente en informatique orientée vers la pratique et les projets concrets. Apprentissage approfondi en développement web, algorithmique, réseaux, bases de données, systèmes et gestion de projet.</p>
-                        <div class="timeline-skills">
-                            <span class="timeline-skill-tag">Programmation orientée objet</span>
-                            <span class="timeline-skill-tag">Développement web</span>
-                            <span class="timeline-skill-tag">Bases de données</span>
-                            <span class="timeline-skill-tag">Réseaux et systèmes</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Timeline Item 2 -->
-                <div class="timeline-item">
-                    <div class="timeline-dot">
-                        <i class="fas fa-user-graduate"></i>
-                    </div>
-                    <div class="timeline-date">2021-2024</div>
-                    <div class="timeline-content">
-                        <h3>Baccalauréat STI2D</h3>
-                        <span class="timeline-location">Lycée Raoul Follereau, Belfort</span>
-                        <p>Spécialité Systèmes d'Information et Numérique, Mention Assez-Bien.</p>
-                        <div class="timeline-skills">
-                            <span class="timeline-skill-tag">Algorithmique et programmation</span>
-                            <span class="timeline-skill-tag">Projets informatiques</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Timeline Item 3 -->
-                <div class="timeline-item">
-                    <div class="timeline-dot">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <div class="timeline-date">2019</div>
-                    <div class="timeline-content">
-                        <h3>Initiation à la programmation</h3>
-<p>Débuts en développement web en autodidacte, à l’aide de ressources en ligne. Apprentissage des bases du HTML, du CSS et du JavaScript à travers des projets simples (sites statiques, scripts interactifs). Cette expérience a déclenché ma passion pour l’informatique.</p>
-                        <div class="timeline-skills">
-                            <span class="timeline-skill-tag">HTML</span>
-                            <span class="timeline-skill-tag">CSS</span>
-                            <span class="timeline-skill-tag">JavaScript</span>
-                        </div>
-                    </div>
-                </div>
-        
             </div>
         </div>
     </section>
@@ -193,7 +131,7 @@
                             <span>SQL</span>
                         </div>
                         <div class="project-buttons">
-                            <button class="btn details-btn" onclick="openModal('ecommerce-details')">Détails du projet</button>
+                            <button class="btn details-btn" onclick="openModal('ecommerce-details')">Détails du projet <span style="color: #ff4444; margin-left: 5px;">(1 Trace)</span></button>
                             <a href="https://github.com/bdidier1/SAE2.04" class="project-link">Voir le projet <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
@@ -211,7 +149,7 @@
                             <span>Java</span>
                         </div>
                         <div class="project-buttons">
-                            <button class="btn details-btn" onclick="openModal('pauvocoder-details')">Détails du projet</button>
+                            <button class="btn details-btn" onclick="openModal('pauvocoder-details')">Détails du projet <span style="color: #ff4444; margin-left: 5px;">(1 Trace)</span></button>
                             <a href="https://github.com/bdidier1/SAE1.01-02" class="project-link">Voir le projet <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
@@ -521,7 +459,6 @@
                     <h4>Navigation</h4>
                     <ul>
                         <li><a href="#about">À propos</a></li>
-                        <li><a href="#timeline">Parcours</a></li>
                         <li><a href="#projets">Projets</a></li>
                         <li><a href="#skills">Compétences</a></li>
                         <li><a href="#contact">Contact</a></li>
