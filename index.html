@@ -525,19 +525,44 @@ Ce travail m’a permis de mobiliser plusieurs savoirs : la <b>modélisation des
                 </div>
             </div>
             <div class="modal-text">
-            <p>
-                La figure 2 est une capture de l’interface d’<b>IntelliJ IDEA</b>, un <b>environnement de développement intégré (IDE)</b> qui facilite grandement la création et l’exécution de programmes en <b>Java</b>. J’ai utilisé cet outil pour développer un projet nommé <b>“Pauvocodeur”</b>, destiné au <b>traitement numérique de fichiers audio</b> au format .wav.
-<br><br>
-Dans ce projet, la <b>configuration de l’exécution du programme</b> est un élément clé, notamment parce que le programme attend des <b>paramètres en ligne de commande</b> pour fonctionner correctement. Ces paramètres permettent de spécifier, par exemple, le nom du fichier audio à traiter ainsi que certains réglages numériques, comme un facteur de modification de fréquence.
-<br><br>
-Dans la partie droite de la figure 2, on distingue clairement la <b>fenêtre de configuration d’exécution</b> d’IntelliJ IDEA, dans laquelle j’ai renseigné la <b>classe principale</b> contenant la méthode main, ainsi que les <b>arguments passés lors du lancement du programme</b>. Ici, les arguments <b>linformatique.wav 2</b> indiquent que le programme doit ouvrir le fichier nommé linformatique.wav et appliquer un facteur de fréquence égal à 2.
-<br><br>
-Sur la partie gauche de la figure 2, l’<b>arborescence du projet</b> montre plusieurs fichiers générés automatiquement, notamment des fichiers .wav issus des traitements, ainsi qu’un fichier texte contenant la sortie console du programme. Cette organisation témoigne d’une <b>bonne gestion des fichiers et des résultats</b> dans le système.
-<br><br>
-Cette configuration dans IntelliJ IDEA facilite la <b>gestion des paramètres d’exécution</b> et le <b>test rapide de différentes options</b>, sans nécessiter de modification du code source. Cela illustre ma <b>maîtrise de l’IDE</b> pour compiler, exécuter et déboguer efficacement un programme Java.
-<br><br>
-En résumé, la figure 2 met en évidence l’importance de bien <b>configurer l’exécution d’un programme Java dans un IDE</b>, notamment quand celui-ci doit traiter des fichiers locaux et recevoir des arguments en ligne de commande, ce qui est essentiel pour le projet Pauvocodeur.
-            </p>    
+                <p>
+                La <strong>figure 2</strong> est une capture de l’interface d’<strong>IntelliJ IDEA</strong>, un environnement de développement intégré (<strong>IDE</strong>) que j’ai utilisé pour développer un projet nommé <strong>Pauvocodeur</strong>. Ce projet a pour objectif de traiter des fichiers audio au format <strong>.wav</strong> en leur appliquant différentes transformations numériques, telles que le <strong>rééchantillonnage</strong>, l’ajout d’<strong>effets</strong> (écho, chevauchement), ou encore des <strong>modifications de durée et de fréquence</strong>.
+                </p>
+                <p>
+                Dans ce projet, l’exécution du programme repose sur le passage de <strong>paramètres en ligne de commande</strong>. Ceux-ci permettent à l’utilisateur de définir, au moment du lancement, le fichier audio à utiliser et les paramètres de traitement à appliquer. Par exemple, dans la capture d’écran, les arguments <strong>linformatique.wav 2</strong> indiquent que le programme devra charger le fichier nommé linformatique.wav et appliquer un facteur de fréquence égal à 2.
+                </p>
+                <p>
+                Dans la partie droite de la figure, on voit la <strong>fenêtre de configuration d’exécution</strong> d’IntelliJ IDEA, entourée en rouge. Elle montre les principaux réglages effectués pour lancer le projet :
+                </p>
+                <ul>
+                    <li>Le champ <strong>“Name”</strong> contient le nom de la configuration (<strong>Pauvocodeur</strong>) ;</li>
+                    <li>Le champ <strong>“Build and run”</strong> indique l’environnement <strong>JDK</strong> utilisé (<strong>Java 23 SDK</strong>), la classe principale (<strong>Pauvocoder</strong>) et les arguments passés au programme (<strong>linformatique.wav 2</strong>) ;</li>
+                    <li>Le champ <strong>“Working directory”</strong> spécifie le chemin du dossier contenant les ressources du projet, ici <strong>C:\Users\bapti\Desktop\I\SAE1.01-02</strong> ;</li>
+                    <li>La mention <strong>"Open run/debug tool window when started"</strong> permet d’afficher automatiquement les résultats dans la console lors de l’exécution.</li>
+                </ul>
+                <p>
+                Ces paramètres permettent de <strong>simuler une ligne de commande directement dans l’IDE</strong>, sans avoir à ouvrir un terminal externe, ce qui rend les tests beaucoup plus rapides et efficaces.
+                </p>
+                <p>
+                Dans la partie gauche de la figure, également entourée en rouge, on distingue deux zones importantes :
+                </p>
+                <ul>
+                    <li>En haut, l’<strong>arborescence du dossier Pauvocoder</strong>, avec le fichier source principal (<strong>Main.java</strong>) et les bibliothèques utilisées (<strong>StdAudio</strong>, <strong>StdDraw</strong>) ;</li>
+                    <li>En bas, le dossier <strong>test_audio</strong> qui contient tous les fichiers <strong>.wav</strong> générés automatiquement par le programme, à partir du fichier source linformatique.wav, avec différents paramètres de traitement (<strong>Resampled</strong>, <strong>SimpleOver</strong>, <strong>SimpleOverCrossEcho</strong>, etc.). La présence du fichier <strong>output_log.txt</strong> montre que les sorties du programme ont été redirigées dans un fichier texte, ce qui est utile pour garder une trace des traitements effectués.</li>
+                </ul>
+                <p>
+                    <br>
+                Ces <strong>annotations visuelles</strong> (zones rouges) servent à mettre en évidence les éléments essentiels pour comprendre l’organisation du projet et la configuration de son exécution. Elles illustrent notamment :
+                <ul>
+                    <li>la <strong>gestion des fichiers sources et des fichiers générés</strong> ;</li>
+                    <li>l’<strong>usage de bibliothèques tierces</strong> (comme StdAudio) pour le traitement du son ;</li>
+                    <li>la <strong>maîtrise de la configuration d’un projet Java avec arguments</strong>.</li>
+                </ul>
+                                </p>
+
+                <p>
+                En résumé, la <strong>figure 2</strong> démontre l’intérêt de savoir <strong>configurer une exécution paramétrée dans un IDE</strong> comme IntelliJ IDEA, surtout dans un contexte de développement d’application audio. Cela permet de tester rapidement plusieurs variantes d’un programme en changeant simplement les paramètres, tout en gardant une structure de projet claire et bien organisée. Ce travail m’a permis de consolider mes savoir-faire en <strong>traitement du son numérique</strong>, en <strong>gestion de fichiers système</strong>, et en <strong>utilisation professionnelle d’un IDE Java</strong>.
+                </p>
             </div>
         </div>
     </div>
